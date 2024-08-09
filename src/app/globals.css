@@ -1,33 +1,231 @@
+@import url("colors.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    /* Light Theme */
+    --border-card: var(--grey-light);
+    --border-primary: var(--grey-darkest);
+    --border-primary-dark: var(--grey-deepest);
+    --border-button-outline: var(--grey-deepest);
+    --border-text-field-default: var(--grey-light);
+    --border-text-field-error: var(--red-dark);
+    --border-text-field-focus: var(--grey-deepest);
+    --border-text-field-hover: var(--grey-neutral);
+    --surface-alternative: var(--grey-deepest);
+    --surface-card: var(--grey-white);
+    --surface-error: var(--red-bright);
+    --surface-error-light: var(--red-lightest);
+    --surface-error-medium: var(--red-soft);
+    --surface-info: var(--blue-bright);
+    --surface-info-light: var(--blue-lightest);
+    --surface-info-medium: var(--blue-soft);
+    --surface-light: var(--grey-white);
+    --surface-medium: var(--grey-light);
+    --surface-overlay: #0a071666;
+    --surface-primary: var(--grey-darkest);
+    --surface-primary-alpha: #2c2c2c33;
+    --surface-primary-dark: var(--grey-deepest);
+    --surface-primary-light: var(--grey-lightest);
+    --surface-primary-medium: var(--grey-lighter);
+    --surface-soft: var(--grey-lighter);
+    --surface-success: var(--green-bright);
+    --surface-success-light: var(--green-lightest);
+    --surface-success-medium: var(--green-light);
+    --surface-suggest: var(--purple-bright);
+    --surface-suggest-light: var(--purple-lighter);
+    --surface-suggest-medium: var(--purple-soft);
+    --surface-warning: var(--yellow-medium);
+    --surface-warning-light: var(--yellow-lightest);
+    --surface-warning-medium: var(--yellow-bright);
+    --surface-button-destructive: var(--red-bright);
+    --surface-button-destructive-hover: var(--red-dark);
+    --surface-button-outline-hover: var(--grey-light);
+    --surface-button-primary: var(--grey-darkest);
+    --surface-button-primary-hover: var(--grey-deepest);
+    --surface-button-secondary: var(--grey-light);
+    --surface-button-secondary-hover: var(--grey-soft);
+    --surface-chat-audio-wave: var(--grey-darkest);
+    --surface-chat-bubble-receive: var(--grey-lighter);
+    --surface-chat-bubble-send: var(--grey-darker);
+    --surface-text-field-default: var(--grey-lighter);
+    --text-alternative: var(--grey-white);
+    --text-default: var(--grey-deepest);
+    --text-disabled: #8c8c8c;
+    --text-error: var(--red-bright);
+    --text-info: var(--blue-bright);
+    --text-link: var(--electric-blue-bright);
+    --text-primary: var(--grey-darkest);
+    --text-secondary: var(--grey-dark);
+    --text-success: var(--green-medium);
+    --text-suggest: var(--purple-bright);
+    --text-warning: var(--yellow-darker);
+    --text-button-destructive: var(--grey-white);
+    --text-button-ghost: var(--grey-deepest);
+    --text-button-outline: var(--grey-deepest);
+    --text-button-primary: var(--grey-white);
+    --text-button-secondary: var(--grey-deepest);
+    --text-chat-bubble-receive: var(--grey-deepest);
+    --text-chat-bubble-send: var(--grey-white);
+    --text-text-field-default: var(--grey-deepest);
+    --text-text-field-error: var(--red-dark);
+    --text-text-field-secondary: var(--grey-dark);
+  }
+
+  .dark {
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    /* Override dark theme variables here */
+    --border-card: var(--grey-darker);
+    --border-primary: var(--grey-white);
+    --border-primary-dark: var(--grey-light);
+    --border-button-outline: var(--grey-white);
+    --border-text-field-default: var(--grey-dark);
+    --border-text-field-error: var(--red-soft);
+    --border-text-field-focus: var(--grey-white);
+    --border-text-field-hover: var(--grey-dark);
+    --surface-alternative: var(--grey-white);
+    --surface-card: var(--grey-darkest);
+    --surface-error: var(--red-lightest);
+    --surface-error-light: var(--red-darker);
+    --surface-error-medium: var(--red-bright);
+    --surface-info: var(--blue-lightest);
+    --surface-info-light: var(--blue-dark);
+    --surface-info-medium: var(--blue-bright);
+    --surface-light: var(--grey-deepest);
+    --surface-medium: var(--grey-darker);
+    --surface-overlay: #fefefe66;
+    --surface-primary: var(--grey-white);
+    --surface-primary-alpha: #fefefe33;
+    --surface-primary-dark: var(--grey-white);
+    --surface-primary-light: var(--grey-darkest);
+    --surface-primary-medium: var(--grey-darker);
+    --surface-soft: var(--grey-darkest);
+    --surface-success: var(--green-medium-light);
+    --surface-success-light: var(--green-darkest);
+    --surface-success-medium: var(--green-medium-dark);
+    --surface-suggest: var(--purple-light);
+    --surface-suggest-light: var(--purple-dark);
+    --surface-suggest-medium: var(--purple-medium);
+    --surface-warning: var(--yellow-lightest);
+    --surface-warning-light: var(--yellow-darker);
+    --surface-warning-medium: var(--yellow-bright);
+    --surface-button-destructive: var(--red-bright);
+    --surface-button-destructive-hover: var(--red-dark);
+    --surface-button-outline-hover: var(--grey-dark-deep);
+    --surface-button-primary: var(--grey-white);
+    --surface-button-primary-hover: var(--grey-lighter);
+    --surface-button-secondary: var(--grey-darker);
+    --surface-button-secondary-hover: var(--grey-dark-deep);
+    --surface-chat-audio-wave: var(--grey-white);
+    --surface-chat-bubble-receive: var(--grey-darkest);
+    --surface-chat-bubble-send: var(--grey-lighter);
+    --surface-text-field-default: var(--grey-darker);
+    --text-alternative: var(--grey-deepest);
+    --text-default: var(--grey-white);
+    --text-disabled: #b3b2b2;
+    --text-error: var(--red-soft);
+    --text-info: var(--blue-bright);
+    --text-link: var(--electric-blue-soft);
+    --text-primary: var(--grey-white);
+    --text-secondary: var(--grey-medium);
+    --text-success: var(--green-light);
+    --text-suggest: var(--purple-bright);
+    --text-warning: var(--yellow-soft);
+    --text-button-destructive: var(--grey-white);
+    --text-button-ghost: var(--grey-white);
+    --text-button-outline: var(--grey-white);
+    --text-button-primary: var(--grey-deepest);
+    --text-button-secondary: var(--grey-white);
+    --text-chat-bubble-receive: var(--grey-white);
+    --text-chat-bubble-send: var(--grey-deepest);
+    --text-text-field-default: var(--grey-white);
+    --text-text-field-error: var(--red-soft);
+    --text-text-field-secondary: var(--grey-moderate);
+  }
+
+  .pink {
+    --border-card: var(--pink-light);
+    --border-primary: var(--pink-bright);
+    --border-primary-dark: var(--pink-dark);
+    --border-button-outline: var(--grey-deepest);
+    --border-text-field-default: var(--pink-lighter);
+    --border-text-field-error: var(--red-dark);
+    --border-text-field-focus: var(--grey-deepest);
+    --border-text-field-hover: var(--grey-neutral);
+    --surface-alternative: var(--grey-deepest);
+    --surface-card: var(--grey-white);
+    --surface-error: var(--red-bright);
+    --surface-error-light: var(--red-lightest);
+    --surface-error-medium: var(--red-soft);
+    --surface-info: var(--blue-bright);
+    --surface-info-light: var(--blue-lightest);
+    --surface-info-medium: var(--blue-soft);
+    --surface-light: var(--grey-white);
+    --surface-medium: var(--pink-medium);
+    --surface-overlay: #0a071666;
+    --surface-primary: var(--pink-bright);
+    --surface-primary-alpha: #ff7fd333;
+    --surface-primary-dark: var(--pink-dark);
+    --surface-primary-light: var(--pink-lightest);
+    --surface-primary-medium: var(--pink-light);
+    --surface-soft: var(--pink-light);
+    --surface-success: var(--green-bright);
+    --surface-success-light: var(--green-lightest);
+    --surface-success-medium: var(--green-light);
+    --surface-suggest: var(--purple-bright);
+    --surface-suggest-light: var(--purple-lighter);
+    --surface-suggest-medium: var(--purple-soft);
+    --surface-warning: var(--yellow-medium);
+    --surface-warning-light: var(--yellow-lightest);
+    --surface-warning-medium: var(--yellow-bright);
+    --surface-button-destructive: var(--red-bright);
+    --surface-button-destructive-hover: var(--red-dark);
+    --surface-button-outline-hover: var(--pink-lighter);
+    --surface-button-primary: var(--grey-darkest);
+    --surface-button-primary-hover: var(--grey-deepest);
+    --surface-button-secondary: var(--pink-lighter);
+    --surface-button-secondary-hover: var(--pink-medium-light);
+    --surface-chat-audio-wave: var(--pink-bright);
+    --surface-chat-bubble-receive: var(--grey-lighter);
+    --surface-chat-bubble-send: var(--pink-bright);
+    --surface-text-field-default: var(--grey-white-soft);
+    --text-alternative: var(--grey-white);
+    --text-default: var(--grey-deepest);
+    --text-disabled: #8c8c8c;
+    --text-error: var(--red-bright);
+    --text-info: var(--blue-bright);
+    --text-link: var(--electric-blue-bright);
+    --text-primary: var(--pink-bright);
+    --text-secondary: var(--grey-dark);
+    --text-success: var(--green-medium);
+    --text-suggest: var(--purple-bright);
+    --text-warning: var(--yellow-darker);
+    --text-button-destructive: var(--grey-white);
+    --text-button-ghost: var(--grey-deepest);
+    --text-button-outline: var(--grey-deepest);
+    --text-button-primary: var(--grey-white);
+    --text-button-secondary: var(--grey-deepest);
+    --text-chat-bubble-receive: var(--grey-deepest);
+    --text-chat-bubble-send: var(--grey-white);
+    --text-text-field-default: var(--grey-deepest);
+    --text-text-field-error: var(--red-dark);
+    --text-text-field-secondary: var(--grey-dark);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  * {
+    @apply border-border;
   }
 }
