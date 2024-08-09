@@ -94,11 +94,11 @@ export const products = [
 export const menuOptions = [
   { name: 'Home', Component: Home, href: '/home' },
   { name: 'Chat', Component: Workflows, href: '/chat' },
-  { name: 'Data', Component: Category, href: '/' },
-  { name: 'Settings', Component: Settings, href: '/' },
-  { name: 'Billing', Component: Payment, href: '/' },
-  { name: 'Templates', Component: Templates, href: '/' },
-  { name: 'Logs', Component: Logs, href: '/' },
+  // { name: 'Data', Component: Category, href: '/' },
+  // { name: 'Settings', Component: Settings, href: '/' },
+  // { name: 'Billing', Component: Payment, href: '/' },
+  // { name: 'Templates', Component: Templates, href: '/' },
+  // { name: 'Logs', Component: Logs, href: '/' },
 ]
 
 export const EditorCanvasDefaultCardTypes = {

@@ -23,7 +23,6 @@ const Sidebar = ({ isVisible, setIsVisible }: SidebarProps) => {
   const pathName = usePathname();
   const [autoHide, setAutoHide] = useState(true);
 
-
   const handleMouseEnter = () => {
     if (autoHide) {
       setIsVisible(true);
@@ -44,7 +43,7 @@ const Sidebar = ({ isVisible, setIsVisible }: SidebarProps) => {
       />
       <nav
         className={clsx(
-          "fixed md:block bg-Surface-Light dark:bg-black h-screen overflow-none flex items-center flex-col gap-10 py-6 px-2 transition-transform duration-300",
+          "fixed w-64 md:block bg-Surface-Light dark:bg-black h-screen overflow-none flex flex-col gap-10 py-6 px-2 transition-transform duration-300",
           {
             "-translate-x-full": !isVisible,
             "translate-x-0": isVisible,
@@ -52,48 +51,44 @@ const Sidebar = ({ isVisible, setIsVisible }: SidebarProps) => {
         )}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="flex items-center justify-center flex-col gap-8">
-          <TooltipProvider>
+        <div className="flex flex-col gap-8 h-screen">
+          <div className="flex justify-center flex-col gap-8">
             {menuOptions.map((menuItem) => (
               <ul key={menuItem.name}>
-                <Tooltip delayDuration={0}>
-                  <TooltipTrigger>
-                    <li>
-                      <Link
-                        href={menuItem.href}
-                        className={clsx(
-                          "group h-8 w-8 flex items-center justify-center scale-[1.5] rounded-lg p-[3px] cursor-pointer",
-                          {
-                            "dark:bg-[#2F006B] bg-[#EEE0FF] ":
-                              pathName === menuItem.href,
-                          }
-                        )}
-                      >
-                        <menuItem.Component
-                          selected={pathName === menuItem.href}
-                        />
-                      </Link>
-                    </li>
-                  </TooltipTrigger>
-                  <TooltipContent
-                    side="right"
-                    className="bg-black/10 backdrop-blur-xl"
+                <li className="flex items-center gap-2">
+                  <Link
+                    href={menuItem.href}
+                    className={clsx(
+                      "group h-8 w-8 flex items-center justify-center scale-[1.5] rounded-lg p-[3px] cursor-pointer",
+                      {
+                        "dark:bg-[#2F006B] bg-[#EEE0FF] ":
+                          pathName === menuItem.href,
+                      }
+                    )}
                   >
-                    <p>{menuItem.name}</p>
-                  </TooltipContent>
-                </Tooltip>
+                    <menuItem.Component selected={pathName === menuItem.href} />
+                  </Link>
+                  <div className="text-sm text-Text-Secondary ml-2">
+                    {menuItem.name}
+                  </div>
+                </li>
               </ul>
             ))}
-          </TooltipProvider>
-          <Separator />
-        </div>
-        <div className="mt-8">
-          <ModeToggle />
-        </div>
-        <div className="mt-4">
-          <label className="flex items-center gap-2">
-            <Switch checked={autoHide} onCheckedChange={setAutoHide} />
-          </label>
+            <Separator />
+          </div>
+
+          <div className="flex flex-col gap-8  bottom-0">
+            <div className="flex flex-row gap-4 items-center">
+              <ModeToggle />
+              <div className="text-sm text-Text-Secondary">Theme</div>
+            </div>
+            <div className="flex flex-row gap-4 items-center">
+              <label>
+                <Switch checked={autoHide} onCheckedChange={setAutoHide} />
+              </label>
+              <div className="text-sm text-Text-Secondary">Auto hide</div>
+            </div>
+          </div>
         </div>
       </nav>
     </>

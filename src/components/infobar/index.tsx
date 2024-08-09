@@ -1,6 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { AlignJustify, Book, Headphones, Search } from "lucide-react";
+import {
+  AlignJustify,
+  Book,
+  Brain,
+  Headphones,
+  Search,
+  SquareUserRound,
+} from "lucide-react";
 
 import {
   Tooltip,
@@ -33,19 +40,13 @@ const InfoBar = () => {
         <button onClick={toggleSidebar} className="menu-button">
           <AlignJustify />
         </button>
-        <Link className="flex font-bold flex-row md:hide" href="/">
-          DAB
-        </Link>
-        <TooltipProvider>
-          <Tooltip delayDuration={0}>
-            <TooltipTrigger>
-              <Headphones />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Contact Support</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <div className="flex flex-row gap-4 items-center">
+          <Link className="flex font-bold flex-row md:hide" href="/">
+            DAB.AI
+          </Link>
+          <Brain />
+        </div>
+        <SquareUserRound />
       </div>
       <Sidebar isVisible={isSidebarVisible} setIsVisible={toggleSidebar} />
     </div>
