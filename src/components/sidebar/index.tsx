@@ -13,80 +13,78 @@ import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "../global/mode-toggle";
 import { menuOptions } from "@/lib/constant";
 import { Switch } from "@/components/ui/switch";
+import { useDispatch, useSelector } from "react-redux";
+import { hideSidebar, showSidebar } from "@/store/menu/actions";
+import { AlignJustify, SquarePen } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 type SidebarProps = {
   isVisible: boolean;
   setIsVisible: (visible: boolean) => void;
 };
 
-const Sidebar = ({ isVisible, setIsVisible }: SidebarProps) => {
+const Sidebar = ({ isVisible = true }: SidebarProps) => {
   const pathName = usePathname();
-  const [autoHide, setAutoHide] = useState(true);
+  const dispatch = useDispatch();
+  const router = useRouter();
 
-  const handleMouseEnter = () => {
-    if (autoHide) {
-      setIsVisible(true);
+  const isSidebarVisible = useSelector(
+    (state: any) => state.sidebar.isSidebarVisible
+  );
+
+  const toggleSidebar = () => {
+    if (isSidebarVisible) {
+      dispatch(hideSidebar());
+    } else {
+      dispatch(showSidebar());
     }
   };
 
-  const handleMouseLeave = () => {
-    if (autoHide) {
-      setIsVisible(false);
-    }
+  const newChat = () => {
+    dispatch(hideSidebar());
+    router.push('/chat'); 
   };
 
   return (
     <>
-      <div
-        className="fixed top-0 left-0 w-4 h-screen z-50"
-        onMouseEnter={handleMouseEnter}
-      />
+      <div className="fixed top-0 left-0 w-4 h-screen z-50" />
       <nav
         className={clsx(
-          "fixed w-64 md:block bg-Surface-Light dark:bg-black h-screen overflow-none flex flex-col gap-10 py-6 px-2 transition-transform duration-300",
+          "fixed w-64 md:block bg-Surface-Card h-screen overflow-none flex flex-col gap-10 py-6 px-4 transition-transform duration-300",
           {
             "-translate-x-full": !isVisible,
             "translate-x-0": isVisible,
           }
         )}
-        onMouseLeave={handleMouseLeave}
       >
-        <div className="flex flex-col gap-8 h-screen">
-          <div className="flex justify-center flex-col gap-8">
-            {menuOptions.map((menuItem) => (
-              <ul key={menuItem.name}>
-                <li className="flex items-center gap-2">
-                  <Link
-                    href={menuItem.href}
-                    className={clsx(
-                      "group h-8 w-8 flex items-center justify-center scale-[1.5] rounded-lg p-[3px] cursor-pointer",
-                      {
-                        "dark:bg-[#2F006B] bg-[#EEE0FF] ":
-                          pathName === menuItem.href,
-                      }
-                    )}
-                  >
-                    <menuItem.Component selected={pathName === menuItem.href} />
-                  </Link>
-                  <div className="text-sm text-Text-Secondary ml-2">
-                    {menuItem.name}
-                  </div>
-                </li>
-              </ul>
-            ))}
-            <Separator />
+        <div className="flex flex-col gap-8 h-screen justify-between">
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-row gap-4 justify-between">
+              <div className="flex flex-row gap-4 justify-end">
+                <button onClick={toggleSidebar} className="menu-button">
+                  <AlignJustify />
+                </button>
+              </div>
+              <button onClick={newChat} className="menu-button">
+                <SquarePen />
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-2 mt-10">
+              <div className="text-Text-Secondary font-medium text-xs">hoy</div>
+              <div className="text-Text-Secondary font-medium text-base cursor-pointer">
+                Ventas del mes
+              </div>
+              <div className="text-Text-Secondary font-medium text-base cursor-pointer">
+                Prototipo de la app
+              </div>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-8  bottom-0">
+          <div className="flex flex-col gap-8 mb-10">
             <div className="flex flex-row gap-4 items-center">
               <ModeToggle />
               <div className="text-sm text-Text-Secondary">Theme</div>
-            </div>
-            <div className="flex flex-row gap-4 items-center">
-              <label>
-                <Switch checked={autoHide} onCheckedChange={setAutoHide} />
-              </label>
-              <div className="text-sm text-Text-Secondary">Auto hide</div>
             </div>
           </div>
         </div>

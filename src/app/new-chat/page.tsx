@@ -8,7 +8,6 @@ import { Card } from "@/components/ui/card";
 import UploadCard from "../demo-chat/component/UploadCard";
 import { BotMessageSquare } from "lucide-react";
 import { useSelector } from "react-redux";
-import axios from "axios"; // Importar axios para hacer solicitudes HTTP
 
 export interface Message {
   message: string | string[];
@@ -17,33 +16,24 @@ export interface Message {
   type?: string;
 }
 
+const demoMessages: Message[] = [];
+
 const Chat = () => {
   const [disabledInput, setDisabledInput] = useState<boolean>(false);
   const [placeholder, setPlaceholder] = useState<string>("Mensaje...");
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>(demoMessages);
   const isSidebarVisible = useSelector(
     (state: any) => state.sidebar.isSidebarVisible
   );
 
-  const sendMessages = async (message: string) => {
+  const sendMessages = (message: string) => {
     if (!message) return;
-  
+
     setDisabledInput(true);
-    setPlaceholder("Enviando...");
-  
+    setPlaceholder("Mensaje...");
+
     const newMessage = { message, received: false, time: getShortDate() };
     setMessages((prev) => [...prev, newMessage]);
-  
-    try {
-      const response = await axios.post("http://localhost:8000/chat", { message });
-      const botMessage = response.data; // Asumimos que la respuesta ya tiene el formato correcto
-      setMessages((prev) => [...prev, botMessage]);
-    } catch (error) {
-      console.error("Error al enviar el mensaje:", error);
-    } finally {
-      setDisabledInput(false);
-      setPlaceholder("Mensaje...");
-    }
   };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -65,7 +55,14 @@ const Chat = () => {
             ¡Bienvenido al asistente de chat! 🎉
           </div>
           <div className="text-Text-Default">
-            Para comenzar, escribe un mensaje en el cuadro de texto.
+            Para comenzar, por favor sube un archivo. Puedes arrastrar y soltar
+            el archivo en el área indicada o hacer clic para seleccionarlo desde
+            tu dispositivo. Una vez cargado, estaremos listos para ayudarte con
+            lo que necesites. ¡Esperamos que tengas una excelente experiencia!
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <BotMessageSquare size={64} />
+            <UploadCard />
           </div>
         </div>
 

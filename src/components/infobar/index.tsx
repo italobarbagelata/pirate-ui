@@ -36,7 +36,9 @@ const InfoBar = () => {
 
   return (
     <div className="info-bar fixed top-0 left-0 w-full z-50">
-      <div className="flex flex-row justify-between gap-6 items-center px-4 py-4 w-full bg-Surface-Light dark:bg-black text-Text-Default">
+      <Sidebar isVisible={isSidebarVisible} setIsVisible={toggleSidebar} />
+
+      <div className="flex flex-row justify-between gap-6 items-center px-4 py-4 w-full bg-Surface-Light text-Text-Default">
         <button onClick={toggleSidebar} className="menu-button">
           <AlignJustify />
         </button>
@@ -48,7 +50,6 @@ const InfoBar = () => {
         </div>
         <SquareUserRound />
       </div>
-      <Sidebar isVisible={isSidebarVisible} setIsVisible={toggleSidebar} />
     </div>
   );
 };

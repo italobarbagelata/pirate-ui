@@ -23,9 +23,9 @@ const Layout = ({ children }: Props) => {
             enableSystem
             disableTransitionOnChange
           >
-            <div className={`flex flex-col overflow-hidden`}>
+            <div className='h-screen'>
               <InfoBar />
-              <div className='p-4 bg-Surface-Light'>{children}</div>
+              {children}
             </div>
           </ThemeProvider>
           <Toaster />

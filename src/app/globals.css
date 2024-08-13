@@ -17,7 +17,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    /* Light Theme */
+    /* Light */
+    /* color */
     --border-card: var(--grey-light);
     --border-primary: var(--grey-darkest);
     --border-primary-dark: var(--grey-deepest);
@@ -39,7 +40,7 @@
     --surface-overlay: #0a071666;
     --surface-primary: var(--grey-darkest);
     --surface-primary-alpha: #2c2c2c33;
-    --surface-primary-dark: var(--grey-deepest);
+    --surface-primary-dark: var(--grey-darkest);
     --surface-primary-light: var(--grey-lightest);
     --surface-primary-medium: var(--grey-lighter);
     --surface-soft: var(--grey-lighter);
@@ -61,7 +62,7 @@
     --surface-button-secondary-hover: var(--grey-soft);
     --surface-chat-audio-wave: var(--grey-darkest);
     --surface-chat-bubble-receive: var(--grey-lighter);
-    --surface-chat-bubble-send: var(--grey-darker);
+    --surface-chat-bubble-send: var(--grey-lighter);
     --surface-text-field-default: var(--grey-lighter);
     --text-alternative: var(--grey-white);
     --text-default: var(--grey-deepest);
@@ -80,25 +81,15 @@
     --text-button-primary: var(--grey-white);
     --text-button-secondary: var(--grey-deepest);
     --text-chat-bubble-receive: var(--grey-deepest);
-    --text-chat-bubble-send: var(--grey-white);
+    --text-chat-bubble-send: var(--grey-deepest);
     --text-text-field-default: var(--grey-deepest);
     --text-text-field-error: var(--red-dark);
     --text-text-field-secondary: var(--grey-dark);
   }
 
   .dark {
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    
-    /* Override dark theme variables here */
+    /* Dark */
+    /* color */
     --border-card: var(--grey-darker);
     --border-primary: var(--grey-white);
     --border-primary-dark: var(--grey-light);
@@ -111,13 +102,13 @@
     --surface-card: var(--grey-darkest);
     --surface-error: var(--red-lightest);
     --surface-error-light: var(--red-darker);
-    --surface-error-medium: var(--red-bright);
+    --surface-error-medium: var (--red-bright);
     --surface-info: var(--blue-lightest);
     --surface-info-light: var(--blue-dark);
     --surface-info-medium: var(--blue-bright);
     --surface-light: var(--grey-deepest);
     --surface-medium: var(--grey-darker);
-    --surface-overlay: #fefefe66;
+    --surface-overlay: #0a0716cc;
     --surface-primary: var(--grey-white);
     --surface-primary-alpha: #fefefe33;
     --surface-primary-dark: var(--grey-white);
@@ -142,7 +133,7 @@
     --surface-button-secondary-hover: var(--grey-dark-deep);
     --surface-chat-audio-wave: var(--grey-white);
     --surface-chat-bubble-receive: var(--grey-darkest);
-    --surface-chat-bubble-send: var(--grey-lighter);
+    --surface-chat-bubble-send: var(--grey-darker);
     --surface-text-field-default: var(--grey-darker);
     --text-alternative: var(--grey-deepest);
     --text-default: var(--grey-white);
@@ -161,13 +152,15 @@
     --text-button-primary: var(--grey-deepest);
     --text-button-secondary: var(--grey-white);
     --text-chat-bubble-receive: var(--grey-white);
-    --text-chat-bubble-send: var(--grey-deepest);
+    --text-chat-bubble-send: var(--grey-white);
     --text-text-field-default: var(--grey-white);
     --text-text-field-error: var(--red-soft);
     --text-text-field-secondary: var(--grey-moderate);
   }
 
   .pink {
+    /* Pink */
+    /* color */
     --border-card: var(--pink-light);
     --border-primary: var(--pink-bright);
     --border-primary-dark: var(--pink-dark);
@@ -210,14 +203,14 @@
     --surface-button-secondary: var(--pink-lighter);
     --surface-button-secondary-hover: var(--pink-medium-light);
     --surface-chat-audio-wave: var(--pink-bright);
-    --surface-chat-bubble-receive: var(--grey-lighter);
-    --surface-chat-bubble-send: var(--pink-bright);
+    --surface-chat-bubble-receive: var(--pink-lightest);
+    --surface-chat-bubble-send: var(--pink-medium-light);
     --surface-text-field-default: var(--grey-white-soft);
     --text-alternative: var(--grey-white);
     --text-default: var(--grey-deepest);
     --text-disabled: #8c8c8c;
     --text-error: var(--red-bright);
-    --text-info: var(--blue-bright);
+    --text-info: var (--blue-bright);
     --text-link: var(--electric-blue-bright);
     --text-primary: var(--pink-bright);
     --text-secondary: var(--grey-dark);
@@ -230,7 +223,7 @@
     --text-button-primary: var(--grey-white);
     --text-button-secondary: var(--grey-deepest);
     --text-chat-bubble-receive: var(--grey-deepest);
-    --text-chat-bubble-send: var(--grey-white);
+    --text-chat-bubble-send: var(--grey-deepest);
     --text-text-field-default: var(--grey-deepest);
     --text-text-field-error: var(--red-dark);
     --text-text-field-secondary: var(--grey-dark);
