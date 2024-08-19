@@ -15,7 +15,7 @@ import { menuOptions } from "@/lib/constant";
 import { Switch } from "@/components/ui/switch";
 import { useDispatch, useSelector } from "react-redux";
 import { hideSidebar, showSidebar } from "@/store/menu/actions";
-import { AlignJustify, SquarePen , Ellipsis  } from "lucide-react";
+import { AlignJustify, SquarePen, Ellipsis } from "lucide-react";
 import { useRouter } from 'next/navigation';
 
 
@@ -43,7 +43,7 @@ const Sidebar = ({ isVisible = true }: SidebarProps) => {
 
   const newChat = () => {
     dispatch(hideSidebar());
-    router.push('/chat'); 
+    router.push('/chat');
   };
 
   return (
@@ -73,17 +73,9 @@ const Sidebar = ({ isVisible = true }: SidebarProps) => {
 
             <div className="flex flex-col gap-2 mt-10">
               <div className="text-Text-Secondary font-medium text-xs mb-1">hoy</div>
-              <div className="relative text-Text-Secondary font-medium text-base cursor-pointer hover:text-Primary mb-2 px-4 py-2 rounded-md hover:bg-gray-800">
-               Nuevo Chat
-               <Ellipsis className="absolute right-4 top-1/2 transform -translate-y-1/2 text-lg font-bold opacity-0 hover:opacity-100 cursor-pointer"/>
-              </div>
-              <div className="relative text-Text-Secondary font-medium text-base cursor-pointer hover:text-Primary mb-2 px-4 py-2 rounded-md hover:bg-gray-800">
-               Nuevo Chat
-               <Ellipsis className="absolute right-4 top-1/2 transform -translate-y-1/2 text-lg font-bold opacity-0 hover:opacity-100 cursor-pointer"/>
-              </div>
-              <div className="relative text-Text-Secondary font-medium text-base cursor-pointer hover:text-Primary mb-2 px-4 py-2 rounded-md hover:bg-gray-800">
-               Nuevo Chat
-              <Ellipsis className="absolute right-4 top-1/2 transform -translate-y-1/2 text-lg font-bold opacity-0 hover:opacity-100 cursor-pointer"/>
+              <div className="flex flex-row justify-between items-center text-Text-Secondary font-medium text-base cursor-pointer hover:text-Primary mb-2 px-4 py-2 rounded-md hover:bg-gray-800 group">
+                Nuevo Chat
+                <Ellipsis className="opacity-0 group-hover:opacity-100 cursor-pointer" />
               </div>
 
               <div className="text-Text-Secondary font-medium text-xs mb-1">ayer</div>
