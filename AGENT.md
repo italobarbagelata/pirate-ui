@@ -13,10 +13,10 @@ Next.js 14.2.5, React 18, TypeScript 5, Redux Toolkit 2.2.7, Radix UI (dropdown,
 
 ## Estructura principal
 
-- `src/app`: Páginas y rutas (App Router): chat, demo-chat, file, home, new-chat con layout global
+- `src/app`: Rutas y páginas (App Router): chat, demo-chat, file, home, new-chat con layout global
 - `src/components`: Componentes reutilizables: UI (Radix), global (mode-toggle), sidebar, infobar
-- `src/store`: Redux centralizado: store.ts, reducers y actions para gestión de menú
 - `src/app/demo-chat/component`: Componentes específicos de chat: Bubble, ChatInput, Conversation, TextMessage, LinkMessage, ListMessage, Chart, UploadCard
+- `src/store`: Redux centralizado: store.ts, reducers y actions para gestión de menú
 - `src/utils`: Funciones utilitarias: DateUtils.ts para operaciones con fechas
 - `src/lib`: Constantes y helpers: constant.ts, utils.ts
 - `src/icons`: Componentes SVG personalizados
@@ -27,7 +27,7 @@ Componentes en PascalCase, archivos en kebab-case. Rutas organizadas en director
 
 ## Último trabajo completado
 
-PIRA-1: [Fix] Next.js page has invalid default export - Corregida exportación por defecto inválida en página Next.js
+PIRA-1: [Fix] Next.js page has invalid default export - Corregida exportación por defecto inválida en página de Next.js
 
 ## Reglas para los agentes
 
