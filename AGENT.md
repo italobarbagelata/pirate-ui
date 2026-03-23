@@ -5,7 +5,7 @@
 
 ## Descripción del proyecto
 
-Pirate UI es una aplicación de chat moderna construida con Next.js 14 y TypeScript que proporciona interfaces conversacionales en tiempo real, gestión de archivos y visualización de datos. Utiliza Redux Toolkit para estado centralizado, componentes Radix UI con Tailwind CSS, y arquitectura modular escalable con soporte para tema oscuro/claro.
+Pirate UI es una aplicación de chat moderna construida con Next.js 14 y TypeScript que proporciona interfaces conversacionales con soporte para múltiples tipos de mensajes, visualización de datos y gestión de archivos. Utiliza Redux Toolkit para estado centralizado, componentes Radix UI con Tailwind CSS, y arquitectura modular escalable con tema oscuro/claro.
 
 ## Stack técnico
 
@@ -15,8 +15,8 @@ Next.js 14.2.5, React 18, TypeScript 5, Redux Toolkit 2.2.7, Radix UI (dropdown,
 
 - `src/app`: Rutas y páginas (App Router): chat, demo-chat, file, home, new-chat con layout global
 - `src/components`: Componentes reutilizables: UI (Radix), global (mode-toggle), sidebar, infobar
-- `src/store`: Redux: store.ts, reducers y actions para gestión de menú centralizada
-- `src/utils`: Funciones utilitarias: DateUtils.ts para operaciones de fechas
+- `src/store`: Redux centralizado: store.ts, reducers y actions para gestión de menú
+- `src/utils`: Funciones utilitarias: DateUtils.ts para operaciones con fechas
 - `src/lib`: Constantes y helpers: constant.ts, utils.ts
 - `src/interfaces`: Definiciones TypeScript: ChatInterface
 - `src/icons`: Componentes SVG personalizados
@@ -28,7 +28,7 @@ Componentes en PascalCase, archivos en kebab-case. Rutas organizadas en director
 
 ## Último trabajo completado
 
-PIRA-1: [Fix] Import no encontrado: @/utils/DateUtils - Se resolvió un problema de importación faltante del módulo DateUtils en la configuración de rutas de TypeScript.
+PIRA-1: [Fix] Import no encontrado: @/utils/DateUtils - Se corrigió referencia de importación faltante en DateUtils.ts, asegurando que el archivo existe en src/utils/ y que todas las referencias usan el path alias correcto @/utils/DateUtils
 
 ## Reglas para los agentes
 
