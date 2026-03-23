@@ -5,7 +5,7 @@
 
 ## Descripción del proyecto
 
-Pirate UI es una aplicación de chat moderna construida con Next.js 14 y TypeScript que proporciona interfaces de conversación en tiempo real, gestión de archivos y visualización de datos. Utiliza Redux Toolkit para estado centralizado, componentes Radix UI con Tailwind CSS, y sigue una arquitectura modular y escalable.
+Pirate UI es una aplicación de chat moderna construida con Next.js 14 y TypeScript que proporciona interfaces conversacionales en tiempo real, gestión de archivos y visualización de datos. Utiliza Redux Toolkit para estado centralizado, componentes Radix UI con Tailwind CSS, y sigue una arquitectura modular escalable.
 
 ## Stack técnico
 
@@ -24,11 +24,11 @@ Next.js 14.2.5, React 18, TypeScript 5, Redux Toolkit 2.2.7, Radix UI (dropdown,
 
 ## Convenciones
 
-Estructura modular por feature. Componentes en PascalCase, archivos en kebab-case. Rutas organizadas en directorios de app. Estado centralizado en Redux con actions y reducers separados. Componentes UI presentacionales sin lógica de negocio. TypeScript strict mode habilitado. Tailwind CSS para estilos, Radix UI como base de componentes accesibles. Path alias @/* apunta a src/. Componentes de demo-chat organizados en subdirectorio /component. Formularios con React Hook Form y validación con Zod.
+Estructura modular por feature. Componentes en PascalCase, archivos en kebab-case. Rutas organizadas en directorios de app. Estado centralizado en Redux con actions y reducers separados. Componentes UI presentacionales sin lógica de negocio. TypeScript strict mode habilitado. Tailwind CSS para estilos, Radix UI como base de componentes accesibles. Path alias @/* apunta a src/. Componentes de demo-chat organizados en subdirectorio /component. Formularios con React Hook Form y validación con Zod. Tema oscuro/claro soportado mediante next-themes.
 
 ## Último trabajo completado
 
-PIRA-1: [Fix] Import no encontrado: @/utils/DateUtils - Resolución de problema de importación faltante en el proyecto. El archivo DateUtils.ts existe en src/utils/ y está correctamente configurado en tsconfig.json con paths alias.
+PIRA-1: [Fix] Import no encontrado: @/utils/DateUtils - Corregido import faltante en utilidades de fechas
 
 ## Reglas para los agentes
 
