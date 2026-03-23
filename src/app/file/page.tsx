@@ -5,16 +5,12 @@ import { Click } from "@/icons/Click";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
-interface FileUploadProps {
-  userName: string;
-  onFileUpload: (file: File) => void;
-}
-
-const FileUpload = ({ userName, onFileUpload }: FileUploadProps) => {
+export default function FileUpload() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const isSidebarVisible = useSelector(
     (state: any) => state.sidebar.isSidebarVisible
   );
+  
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0] || null;
     setSelectedFile(file);
@@ -22,7 +18,8 @@ const FileUpload = ({ userName, onFileUpload }: FileUploadProps) => {
 
   const handleUploadClick = () => {
     if (selectedFile) {
-      onFileUpload(selectedFile);
+      // Handle file upload logic here
+      console.log('Uploading file:', selectedFile);
     }
   };
 
@@ -63,6 +60,4 @@ const FileUpload = ({ userName, onFileUpload }: FileUploadProps) => {
       </div>
     </div>
   );
-};
-
-export default FileUpload;
+}
